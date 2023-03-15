@@ -1,7 +1,7 @@
-const numberOfCategories = document
-  .getElementById('categories')
-  .getElementsByClassName('item').length;
-console.log(`Number of categories: ${numberOfCategories}`);
+const numberOfCategories = document.querySelectorAll(`.item`);
+console.log(`Number of categories: ${numberOfCategories.length}`);
 
-const categorieName = document.querySelector('h2');
-console.log(categorieName.innerHTML);
+for (const element of numberOfCategories) {
+  console.log(`Category: ${element.children[0].innerText}`);
+  console.log(`Elements: ${element.children[1].children.length}`);
+}
